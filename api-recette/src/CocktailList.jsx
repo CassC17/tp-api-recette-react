@@ -10,7 +10,7 @@ const CocktailList = () => {
         return response.json()
     })
     .then((data) => {
-        setCocoktails(data);
+        setCocoktails(data.drinks);
     })
 
   return (
