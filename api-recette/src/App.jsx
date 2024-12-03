@@ -5,6 +5,7 @@ import './App.css'
 import Header from './Header'
 import Footer from './Footer'
 import CocktailList from './CocktailList'
+import RandomCocktail from './RandomCocktail'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
     <>
       <Header />
       <CocktailList/>
+      <RandomCocktail/>
       <Footer />
     </>
   )
