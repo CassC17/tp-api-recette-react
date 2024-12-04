@@ -24,9 +24,9 @@ const RandomCocktail = () => {
     return (
         <section>
         <button onClick={fetchCocktail}>Get a new random cocktail</button>
-            {rdmCocktail.map((cocktail) => {
-                return <CocktailCard cocktail={cocktail}/>;
-            })}
+            {rdmCocktail.map((cocktail) => (
+                <CocktailCard cocktail={cocktail}/>
+            ))}
         </section>
     )
 }
