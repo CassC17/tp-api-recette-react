@@ -1,34 +1,31 @@
-import { useEffect, useState } from 'react'
-import CocktailCard from './CocktailCard'
+import React, { useState, useEffect } from 'react';
+import CocktailCard from './CocktailCard';
 
-const RandomCocktail = () => {
-  
-    const [rdmCocktail, setRdmCocktail] = useState([])
+const RandomCocktails = () => {
+    const [cocktails, setCocktails] = useState([]);
 
-    
-        // récup un cocktail aléatoire
-    const fetchCocktail = async()=>{
-         const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-         const data = await response.json()
-         setRdmCocktail(data.drinks[0])
-    }
-        
+    const fetchCocktail = async () => {
+        const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php');
+        const data = await response.json();
+        setCocktails(data.drinks);
+    };
+
     useEffect(() => {
-        fetchCocktail()},[]) //tab vide = exec après 1er rendu
+        fetchCocktail();
+    }, []);
 
-    if (rdmCocktail.length === 0){
-        return <p>Loading...</p>
-    } // lors du 1er rendu
-    
-    
+    if (cocktails.length === 0) {
+        return <main>En attente</main>;
+    };
+
     return (
-        <section>
-        <button onClick={fetchCocktail}>Get a new random cocktail</button>
-            {rdmCocktail.map((cocktail) => (
-                <CocktailCard cocktail={cocktail}/>
+        <main>
+            <button onClick={fetchCocktail}>Find a new random cocktail</button>
+            {cocktails.map((cocktail) => (
+                <CocktailCard cocktail={cocktail} />
             ))}
-        </section>
-    )
-}
+        </main>
+    );
+};
 
-export default RandomCocktail
+export default RandomCocktails;
