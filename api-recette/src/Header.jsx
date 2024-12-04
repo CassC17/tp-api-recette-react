@@ -1,5 +1,5 @@
-const Header = () => {
-  
+const Header = ({uesrName}) => { 
+
     return (
       <>
         <header>
@@ -7,6 +7,7 @@ const Header = () => {
             <ul>
                 <li> Acceuil </li>
                 <li> Favoris </li>
+                <p>vous etes {uesrName}</p>
             </ul>
           </nav>
         </header>

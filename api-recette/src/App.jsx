@@ -8,11 +8,12 @@ import CocktailList from './CocktailList'
 import RandomCocktail from './RandomCocktail'
 
 function App() {
+  const uesrName = 'John Doe';
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Header />
+      <Header uesrName={uesrName} />
       <CocktailList/>
       <RandomCocktail/>
       <Footer />

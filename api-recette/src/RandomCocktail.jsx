@@ -13,11 +13,11 @@ const RandomCocktail = () => {
     }
         
     useEffect(() => {
-        fetchCocktail()},[])
+        fetchCocktail()},[]) //tab vide = exec après 1er rendu
 
     if (cocktail.length === 0){
         return <p>Loading...</p>
-    }
+    } // lors du 1er rendu
     
 
     return (
@@ -26,11 +26,19 @@ const RandomCocktail = () => {
             {rdmCocktail.map((cocktail) => (
                 <div key={cocktail.idDrink}>
                     <h2>{cocktail.strDrink}</h2>
-                    <p>{cocktail.strAlcoholic}</p>
+                    <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+                    <p>{cocktail.strInstructions}</p>
+                    <ul>
+                      {Object.keys(cocktail)
+                          .filter(key => key.startsWith('strIngredient') && cocktail[key])
+                          .map((key, index) => (
+                              <li key={index}>
+                                  {cocktail[key]} - {cocktail[strMeasure${index + 1}]}
+                              </li>
+                          ))}
+                  </ul>
                 </div>
             ))}
-            <h2>{rdmCocktail.strDrink}</h2>
-            <p>{rdmCocktail.strAlcoholic}</p>
         </section>
     )
 }
