@@ -6,19 +6,18 @@ const RandomCocktail = () => {
 
     
         // récup un cocktail aléatoire
-    const fetchCocktail = ()=>{
-         fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-        .then((response) => {
-            return response.json()
-        })
-        .then((data) => {
-            setRdmCocktail(data.drinks)
-            console.log('new rdm cocktail', data.drinks)
-        })
+    const fetchCocktail = async()=>{
+         const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+         const data = await response.json()
+         setRdmCocktail(data.drinks[0])
     }
         
     useEffect(() => {
         fetchCocktail()},[])
+
+    if (cocktail.length === 0){
+        return <p>Loading...</p>
+    }
     
 
     return (
