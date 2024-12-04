@@ -6,7 +6,8 @@ import Header from './Header'
 import Footer from './Footer'
 import CocktailList from './CocktailList'
 import RandomCocktail from './RandomCocktail'
-import CocktailAll from './CocktailAll'
+import CocktailAll from './AllCocktails'
+import AllCocktails from './AllCocktails'
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
       <Header uesrName={uesrName} />
       <CocktailList cocktails={cocktails}/>
       <RandomCocktail/>
-      <CocktailAll cocktails={cocktails}/>
+      <AllCocktails cocktails={cocktails}/>
       <Footer />
     </>
   )

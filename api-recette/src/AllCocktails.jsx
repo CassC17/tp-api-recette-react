@@ -1,6 +1,6 @@
 import CocktailCard from "./CocktailCard";
 
-const CocktailAll = ({cocktails}) => {
+const AllCocktails = ({cocktails}) => {
 
     return (
         <section>
@@ -12,4 +12,4 @@ const CocktailAll = ({cocktails}) => {
     )
 }
 
-export default CocktailAll
+export default AllCocktails
