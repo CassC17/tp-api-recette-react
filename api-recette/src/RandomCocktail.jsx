@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import CocktailCard from './CocktailCard'
 
 const RandomCocktail = () => {
   
@@ -23,21 +24,9 @@ const RandomCocktail = () => {
     return (
         <section>
         <button onClick={fetchCocktail}>Get a new random cocktail</button>
-            {rdmCocktail.map((cocktail) => (
-                <div key={cocktail.idDrink}>
-                <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-                  <p>{cocktail.strInstructions}</p>
-                  <ul>
-                      {Object.keys(cocktail)
-                          .filter(key => key.startsWith('strIngredient') && cocktail[key])
-                          .map((key, index) => (
-                              <li key={index}>
-                                  {cocktail[key]} - {cocktail['strMeasure${index + 1}']}
-                              </li>
-                          ))}
-                  </ul>
-                </div>
-            ))}
+            {rdmCocktail.map((cocktail) => {
+                return <CocktailCard cocktail={cocktail}/>;
+            })}
         </section>
     )
 }

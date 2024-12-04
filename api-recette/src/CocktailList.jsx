@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import CocktailCard from './CocktailCard'
 
 const CocktailList = () => {
 
@@ -22,12 +23,9 @@ const CocktailList = () => {
   return (
     <section>
         <h1>Cocktail List</h1>
-        {cocktails.map((cocktail) => (
-            <div key={cocktail.idDrink}>
-                <h2>{cocktail.strDrink}</h2>
-                <p>{cocktail.strAlcoholic}</p>
-            </div>
-        ))}
+        {cocktails.map((cocktail) => {
+            return <CocktailCard cocktail={cocktail}/>;
+        })}
     </section>
   )
 }
