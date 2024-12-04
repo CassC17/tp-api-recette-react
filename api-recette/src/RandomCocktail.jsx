@@ -16,11 +16,11 @@ const RandomCocktail = () => {
     useEffect(() => {
         fetchCocktail()},[]) //tab vide = exec après 1er rendu
 
-    if (cocktail.length === 0){
+    if (rdmCocktail.length === 0){
         return <p>Loading...</p>
     } // lors du 1er rendu
     
-
+    
     return (
         <section>
         <button onClick={fetchCocktail}>Get a new random cocktail</button>

@@ -1,4 +1,4 @@
-const CocktailCard = ({cocktail}) => {
+const CocktailCard = ({ cocktail }) => {
     return (
         <article>
             <p>{cocktail.strDrink}</p>
