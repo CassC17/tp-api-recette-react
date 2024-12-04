@@ -9,7 +9,7 @@ const CocktailCard = ({ cocktail }) => {
                           .filter(key => key.startsWith('strIngredient') && cocktail[key])
                           .map((key, index) => (
                               <li key={index}>
-                                  {cocktail[key]} - {cocktail['strMeasure${index + 1}']}
+                                  {cocktail[key]} - {cocktail[`strMeasure${index + 1}`]}
                               </li>
                           ))}
                   </ul>
